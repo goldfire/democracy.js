@@ -45,6 +45,10 @@ new Democracy({
 ### Methods
 #### nodes()
 Returns the object containing all active nodes and their properties (including the one the method is called from).
+#### leader()
+Returns the current leader node from the cluster.
+#### resign()
+If called on the current leader node, will force it to resign as the leader. A new election will be held, which means the same node could be re-elected.
 
 ### Events
 All events return the data/configuration of the affected node as their first parameter.
@@ -57,6 +61,8 @@ Fired when a peer has gone down and subsequently been removed from the list.
 Fired when a new leader is selected.
 #### elected
 Fired on the server that has become the new leader.
+#### resigned
+Fired on the server that has resigned as the leader.
 
 ## License
 Copyright (c) 2016 James Simpson and GoldFire Studios, Inc.
