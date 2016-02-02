@@ -1,0 +1,35 @@
+{
+  "name": "democracy.js",
+  "description": "Node.js unicast discovery and master-slave elections.",
+  "homepage": "https://github.com/goldfire/democracy",
+  "keywords": [
+    "democracy",
+    "consensus",
+    "master",
+    "master-slave",
+    "leader",
+    "unicast",
+    "udp",
+    "discovery"
+  ],
+  "author": "James Simpson <james@goldfirestudios.com> (http://goldfirestudios.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goldfire/democracy.js.git"
+  },
+  "main": "index.js",
+  "version": "1.0.0",
+  "license": {
+    "type": "MIT",
+    "url": "https://raw.githubusercontent.com/goldfire/democracy.js/master/LICENSE.md"
+  },
+  "dependencies": {
+    "node-uuid": "1.4.*"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "engines": [
+    "node >= 0.12.0"
+  ]
+}
