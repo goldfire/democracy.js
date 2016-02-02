@@ -1,5 +1,5 @@
 {
-  "name": "democracy.js",
+  "name": "democracy",
   "description": "Node.js unicast discovery and master-slave elections.",
   "homepage": "https://github.com/goldfire/democracy",
   "keywords": [
