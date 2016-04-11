@@ -70,7 +70,7 @@ Fired when a new leader is selected.
 Fired on the server that has become the new leader.
 #### resigned
 Fired on the server that has resigned as the leader.
-#### <custom/all other events>
+#### custom/all other events
 Fired on all the server except the one that "sent" the event.
 
 ## License
