@@ -56,7 +56,7 @@ Returns the object containing all active nodes and their properties (including t
 Returns the current leader node from the cluster.
 #### resign()
 If called on the current leader node, will force it to resign as the leader. A new election will be held, which means the same node could be re-elected.
-#### send(<customEvent>, <extra data>)
+#### send(customEvent, extraData)
 Sends custom events to all other nodes
 
 ### Events
