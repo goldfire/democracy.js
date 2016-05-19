@@ -30,10 +30,10 @@ dem.on('elected', function(data) {
 });
 
 dem.on('ciao', function(data) {
-    console.log("ciao from %s", data.id, data.extra)
+    console.log('ciao from %s', data.id, data.extra);
 });
 
-dem.send("ciao", { hello: "world"});
+dem.send('ciao', {hello: 'world'});
 
 ```
 
@@ -57,7 +57,7 @@ Returns the current leader node from the cluster.
 #### resign()
 If called on the current leader node, will force it to resign as the leader. A new election will be held, which means the same node could be re-elected.
 #### send(customEvent, extraData)
-Sends a custom event to all other nodes
+Sends a custom event to all other nodes.
 
 ### Events
 All events return the data/configuration of the affected node as their first parameter.
