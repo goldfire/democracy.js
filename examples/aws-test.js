@@ -13,22 +13,21 @@
 var Democracy = require('../lib/democracy');
 
 var dem = new Democracy({
-  source: '0.0.0.0:' + process.argv[2],
-  peers: ['0.0.0.0:12345', '0.0.0.0:12346', '0.0.0.0:12347']
+    awsDiscover: true,
 });
 
 dem.on('added', function(data) {
-  console.log('Added: ', data);
+    console.log('Added: ', data);
 });
 
 dem.on('removed', function(data) {
-  console.log('Removed: ', data);
+    console.log('Removed: ', data);
 });
 
 dem.on('elected', function(data) {
-  console.log('You are elected leader!');
+    console.log('You are elected leader!');
 });
 
 dem.on('leader', function(data) {
-  console.log('New Leader: ', data);
+    console.log('New Leader: ', data);
 });

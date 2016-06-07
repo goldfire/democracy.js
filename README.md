@@ -37,6 +37,35 @@ dem.send('ciao', {hello: 'world'});
 
 ```
 
+The below example is AWS Discover. AWS Discover mode using aws-sdk. Instances need "Democracy" tag and value "yes". (Must allowed UDP port from Security Groups)
+
+```javascript
+var Democracy = require('democracy');
+
+var dem = new Democracy({
+  awsDiscover: true
+});
+
+dem.on('added', function(data) {
+  console.log('Added: ', data);
+});
+
+dem.on('removed', function(data) {
+  console.log('Removed: ', data);
+});
+
+dem.on('elected', function(data) {
+  console.log('You have been elected leader!');
+});
+
+dem.on('ciao', function(data) {
+    console.log('ciao from %s', data.id, data.extra);
+});
+
+dem.send('ciao', {hello: 'world'});
+
+```
+
 ## API
 ### Constructor
 ```javascript
@@ -45,7 +74,11 @@ new Democracy({
   timeout: 3000, // How long a peer must go without sending a `hello` to be considered down.
   source: '0.0.0.0:12345', // The IP and port to listen to (usually the local IP).
   peers: [], // The other servers/ports you want to communicate with (can be on the same or different server).
-  weight: Math.random() * Date.now() // The highest weight is used to determine the new leader. Must be unique for each node.
+  weight: Math.random() * Date.now(), // The highest weight is used to determine the new leader. Must be unique for each node.
+  awsRegion: "eu-west-1", // AWS Region
+  awsDiscover: true, // The enable/disable AWS EC2 discover mode
+  awsDiscoverTagName: "democracy" // AWS Discover mode automatically catch instances by this tag.
+  port: 12345 // Default port number
 });
 ```
 
