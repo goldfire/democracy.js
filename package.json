@@ -24,7 +24,10 @@
     "url": "https://raw.githubusercontent.com/goldfire/democracy.js/master/LICENSE.md"
   },
   "dependencies": {
-    "node-uuid": "1.4.*"
+    "aws-sdk": "^2.3.17",
+    "ec2-instance-data": "^0.4.1",
+    "node-uuid": "1.4.*",
+    "q": "^1.4.1"
   },
   "scripts": {
     "test": "mocha test/test.js"
