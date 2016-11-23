@@ -24,7 +24,7 @@
     "url": "https://raw.githubusercontent.com/goldfire/democracy.js/master/LICENSE.md"
   },
   "dependencies": {
-    "node-uuid": "1.4.*"
+    "uuid": "3.0.*"
   },
   "scripts": {
     "test": "mocha test/test.js"
