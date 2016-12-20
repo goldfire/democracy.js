@@ -1,7 +1,7 @@
 {
   "name": "democracy",
   "description": "Node.js unicast discovery and master-slave elections.",
-  "homepage": "https://github.com/goldfire/democracy",
+  "homepage": "https://github.com/goldfire/democracy.js",
   "keywords": [
     "democracy",
     "consensus",
@@ -25,9 +25,6 @@
   },
   "dependencies": {
     "uuid": "3.0.*"
-  },
-  "scripts": {
-    "test": "mocha test/test.js"
   },
   "engines": [
     "node >= 0.12.0"
