@@ -54,6 +54,8 @@ new Democracy({
 Returns the object containing all active nodes and their properties (including the one the method is called from).
 #### leader()
 Returns the current leader node from the cluster.
+#### isLeader()
+Returns whether or not the current server is the leader.
 #### resign()
 If called on the current leader node, will force it to resign as the leader. A new election will be held, which means the same node could be re-elected.
 #### send(customEvent, extraData)

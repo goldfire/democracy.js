@@ -18,7 +18,7 @@
     "url": "git://github.com/goldfire/democracy.js.git"
   },
   "main": "index.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": {
     "type": "MIT",
     "url": "https://raw.githubusercontent.com/goldfire/democracy.js/master/LICENSE.md"
