@@ -46,6 +46,7 @@ new Democracy({
   source: '0.0.0.0:12345', // The IP and port to listen to (usually the local IP).
   peers: [], // The other servers/ports you want to communicate with (can be on the same or different server).
   weight: Math.random() * Date.now() // The highest weight is used to determine the new leader. Must be unique for each node.
+  id: 'uuid' // (optional) This is generated automatically with uuid, but can optionally be set. Must be unique for each node.
 });
 ```
 
