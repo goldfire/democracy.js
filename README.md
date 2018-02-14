@@ -2,9 +2,8 @@
 In-process monitoring of distributed Node.js instances over UDP unicast. Simply require democracy in each instance and provide the IP/port for other peers and the rest is taken care of automatically. democracy.js will get the configuration from the other nodes, elect a leader and keep them all in sync. If the active leader becomes unresponsive, the other instances will elect a new leader.
 
 ## Installation
-```
-npm install democracy
-```
+* Install with [npm](https://www.npmjs.com/package/democracy): `npm install democracy`
+* Install with [Yarn](https://yarnpkg.com/en/package/democracy): `yarn add democracy`
 
 ## Examples
 The below example is easy to run on your local machine (also found in the examples directory). The IP's can just as easily be swapped out for IP's of other servers/instances.
