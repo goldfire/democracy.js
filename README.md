@@ -12,28 +12,38 @@ The below example is easy to run on your local machine (also found in the exampl
 ```javascript
 var Democracy = require('democracy');
 
+// Basic usage of democracy to manager leader and citizen nodes.
 var dem = new Democracy({
   source: '0.0.0.0:12345',
-  peers: ['0.0.0.0:12345', '0.0.0.0:12346', '0.0.0.0:12347']
+  peers: ['0.0.0.0:12345', '0.0.0.0:12346', '0.0.0.0:12347'],
 });
 
-dem.on('added', function(data) {
+dem.on('added', (data) => {
   console.log('Added: ', data);
 });
 
-dem.on('removed', function(data) {
+dem.on('removed', (data) => {
   console.log('Removed: ', data);
 });
 
-dem.on('elected', function(data) {
+dem.on('elected', (data) => {
   console.log('You have been elected leader!');
 });
 
-dem.on('ciao', function(data) {
-    console.log('ciao from %s', data.id, data.extra);
+// Support for custom events.
+dem.on('ciao', (data) => {
+  console.log(data.hello); // Logs 'world'
 });
 
 dem.send('ciao', {hello: 'world'});
+
+// Support for basic pub/sub.
+dem.on('my-channel', (data) => {
+  console.log(data.hello); // Logs 'world'
+});
+
+dem.subscribe('my-channel');
+dem.publish('my-channel', {hello: 'world'});
 
 ```
 
@@ -45,8 +55,9 @@ new Democracy({
   timeout: 3000, // How long a peer must go without sending a `hello` to be considered down.
   source: '0.0.0.0:12345', // The IP and port to listen to (usually the local IP).
   peers: [], // The other servers/ports you want to communicate with (can be on the same or different server).
-  weight: Math.random() * Date.now() // The highest weight is used to determine the new leader. Must be unique for each node.
-  id: 'uuid' // (optional) This is generated automatically with uuid, but can optionally be set. Must be unique for each node.
+  weight: Math.random() * Date.now(), // The highest weight is used to determine the new leader. Must be unique for each node.
+  id: 'uuid', // (optional) This is generated automatically with uuid, but can optionally be set. Must be unique for each node.
+  channels: [], // (optional) Array of channels for this node to listen to (for pub/sub).
 });
 ```
 
@@ -59,8 +70,12 @@ Returns the current leader node from the cluster.
 Returns whether or not the current server is the leader.
 #### resign()
 If called on the current leader node, will force it to resign as the leader. A new election will be held, which means the same node could be re-elected.
-#### send(customEvent, extraData)
+#### send(customEvent, data)
 Sends a custom event to all other nodes.
+#### subscribe(channel)
+Subscribe to a channel for use with pub/sub.
+#### publish(channel, data)
+Publish to a channel and send specific data with pub/sub.
 
 ### Events
 All events return the data/configuration of the affected node as their first parameter.
@@ -79,6 +94,6 @@ Fired on the server that has resigned as the leader.
 Fired on all the server except the one that "sent" the event.
 
 ## License
-Copyright (c) 2016 James Simpson and GoldFire Studios, Inc.
+Copyright (c) 2016 - 2018 James Simpson and GoldFire Studios, Inc.
 
 Released under the MIT License.
