@@ -1,0 +1,11 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "object-curly-spacing": ["warn", "never"],
+    "no-underscore-dangle": 0
+  }
+}
