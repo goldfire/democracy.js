@@ -1,6 +1,6 @@
 {
   "name": "democracy",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Node.js unicast discovery, master-slave elections and pub/sub.",
   "homepage": "https://github.com/goldfire/democracy.js",
   "keywords": [
@@ -28,9 +28,9 @@
     "uuid": "3.2.*"
   },
   "devDependencies": {
-    "eslint": "4.17.0",
-    "eslint-config-airbnb-base": "12.1.0",
-    "eslint-plugin-import": "2.8.0"
+    "eslint": "4.19.*",
+    "eslint-config-airbnb-base": "12.1.*",
+    "eslint-plugin-import": "2.10.*"
   },
   "engines": [
     "node >= 6.4.0"
