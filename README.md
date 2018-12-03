@@ -52,6 +52,7 @@ dem.publish('my-channel', {hello: 'world'});
 new Democracy({
   interval: 1000, // The interval (ms) at which `hello` heartbeats are sent to the other peers.
   timeout: 3000, // How long a peer must go without sending a `hello` to be considered down.
+  maxPacketSize: 508, // Maximum size per packet. If the data exceeds this, it will be chunked.
   source: '0.0.0.0:12345', // The IP and port to listen to (usually the local IP).
   peers: [], // The other servers/ports you want to communicate with (can be on the same or different server).
   weight: Math.random() * Date.now(), // The highest weight is used to determine the new leader. Must be unique for each node.
