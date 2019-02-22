@@ -1,6 +1,6 @@
 {
   "name": "democracy",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Node.js unicast discovery, master-slave elections and pub/sub.",
   "homepage": "https://github.com/goldfire/democracy.js",
   "keywords": [
