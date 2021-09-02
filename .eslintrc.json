@@ -1,11 +1,18 @@
 {
+  "root": true,
   "env": {
     "es6": true,
     "node": true
   },
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "airbnb-typescript/base"],
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
   "rules": {
     "object-curly-spacing": ["warn", "never"],
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
+    "max-len": 0,
+    "@typescript-eslint/object-curly-spacing": 0
   }
 }
