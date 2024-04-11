@@ -1,0 +1,10 @@
+{
+  "include": ["./lib"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node"
+  }
+}

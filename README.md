@@ -9,7 +9,8 @@ In-process monitoring of distributed Node.js instances over UDP unicast. Simply 
 The below example is easy to run on your local machine (also found in the examples directory). The IP's can just as easily be swapped out for IP's of other servers/instances.
 
 ```javascript
-var Democracy = require('democracy');
+var { default: Democracy } = require('democracy');
+// OR import Democracy from 'democracy';
 
 // Basic usage of democracy to manager leader and citizen nodes.
 var dem = new Democracy({
@@ -58,6 +59,8 @@ new Democracy({
   weight: Math.random() * Date.now(), // The highest weight is used to determine the new leader. Must be unique for each node.
   id: 'uuid', // (optional) This is generated automatically with uuid, but can optionally be set. Must be unique for each node.
   channels: [], // (optional) Array of channels for this node to listen to (for pub/sub).
+  enableStrictWeightMode: false, // (optional) Ensure the highest weighted node becomes leader, even if one is already established.
+  autoStart: true, // (optional) Whether to start networking upon instantiating or manually at a later time
 });
 ```
 
@@ -76,10 +79,18 @@ Sends a custom event to all other nodes.
 Subscribe to a channel for use with pub/sub.
 #### publish(channel, data)
 Publish to a channel and send specific data with pub/sub.
+#### start()
+Open a socket and join or start a democracy cluster
+#### stop()
+Close the socket and leave the democracy cluster
 
 ### Events
 All events return the data/configuration of the affected node as their first parameter.
 
+#### started
+Fired when a socket has been opened and the node has begun communications with the cluster
+#### stopped
+Fired when the node has ceased communications with the cluster and closed the socket.
 #### added
 Fired when a new peer has been found.
 #### removed
