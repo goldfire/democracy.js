@@ -1,8 +1,8 @@
 {
-  "name": "democracy",
+  "name": "@cloudelements/democracy",
   "version": "4.0.0",
   "description": "Node.js unicast discovery, master-slave elections and pub/sub.",
-  "homepage": "https://github.com/goldfire/democracy.js",
+  "homepage": "https://github.com/cloud-elements/democracy.js",
   "keywords": [
     "democracy",
     "consensus",
@@ -17,7 +17,7 @@
   "author": "James Simpson <james@goldfirestudios.com> (http://goldfirestudios.com)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/goldfire/democracy.js.git"
+    "url": "git://github.com/cloud-elements/democracy.js.git"
   },
   "scripts": {
     "build": "tsc",
