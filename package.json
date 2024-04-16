@@ -1,6 +1,6 @@
 {
   "name": "@cloudelements/democracy",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Node.js unicast discovery, master-slave elections and pub/sub.",
   "homepage": "https://github.com/cloud-elements/democracy.js",
   "keywords": [
