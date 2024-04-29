@@ -10,7 +10,7 @@ export type NodeInfo = {
   last: number, // ms timestamp
   voters: Array<NodeId>,
   source: NodeAddress,
-  disconnected?: NodeJS.Timer,
+  disconnected?: ReturnType<typeof setTimeout>,
 };
 
 // Used for this._nodes

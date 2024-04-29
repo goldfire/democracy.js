@@ -42,7 +42,7 @@ class Democracy extends EventEmitter {
 
   private _nodes: NodeInfoMap;
 
-  private _helloTimer: NodeJS.Timer | null;
+  private _helloTimer: ReturnType<typeof setInterval> | null;
 
   private _id: NodeId;
 
@@ -114,7 +114,7 @@ class Democracy extends EventEmitter {
    */
   start(): this {
     const setup = () => {
-    // Setup the UDP socket to listen on.
+      // Setup the UDP socket to listen on.
       this.socket = createSocket({type: 'udp4', reuseAddr: true});
 
       // Bind to the UDP port and begin listeneing for hello, etc messages.
