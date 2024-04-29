@@ -117,6 +117,17 @@ class Democracy extends EventEmitter {
       // Setup the UDP socket to listen on.
       this.socket = createSocket({type: 'udp4', reuseAddr: true});
 
+      // Handle for DNS resolution failures.
+      this.socket.on('error', (err) => {
+        if ('code' in err && err.code === 'ENOTFOUND') {
+          // Intentionally swallow DNS resolution failures. This is a common requirement in
+          // K8s environments where headless services are used and DNS resolution is not available
+          // for pods until after said pods are running and healthy.
+        } else {
+          throw err;
+        }
+      });
+
       // Bind to the UDP port and begin listeneing for hello, etc messages.
       this.socket.bind(this.options.source[1], this.options.source[0], () => {
       // Listen for messages on this port.

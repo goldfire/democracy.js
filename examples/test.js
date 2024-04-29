@@ -16,7 +16,7 @@ var { default: Democracy } = require('../')
 
 var dem = new Democracy({
   source: '0.0.0.0:' + process.argv[2],
-  peers: ['0.0.0.0:12345', '0.0.0.0:12346', '0.0.0.0:12347', '0.0.0.0:12348', '0.0.0.0:12349', '0.0.0.0:12350'],
+  peers: ['0.0.0.0:12345', '0.0.0.0:12346', '0.0.0.0:12347', 'unable-to-resolve.example.com:12348'],
   weight: Number(process.argv[2]),
   id: process.argv[2],
   enableStrictWeightMode: true,
