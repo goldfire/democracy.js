@@ -1,6 +1,6 @@
 {
   "name": "democracy",
-  "version": "3.1.3",
+  "version": "4.0.0",
   "description": "Node.js unicast discovery, master-slave elections and pub/sub.",
   "homepage": "https://github.com/goldfire/democracy.js",
   "keywords": [
@@ -33,6 +33,6 @@
     "eslint-plugin-import": "2.14.*"
   },
   "engines": [
-    "node >= 6.4.0"
+    "node >= 16.0.0"
   ]
 }
