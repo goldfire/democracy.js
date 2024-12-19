@@ -1,6 +1,6 @@
 {
   "name": "democracy",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Node.js unicast discovery, master-slave elections and pub/sub.",
   "homepage": "https://github.com/goldfire/democracy.js",
   "keywords": [
@@ -25,7 +25,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "nanoid": "3.3.7"
+    "nanoid": "^3.3.8"
   },
   "devDependencies": {
     "eslint": "5.9.*",
